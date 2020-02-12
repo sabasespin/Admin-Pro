@@ -1,5 +1,3 @@
-import { P404Component } from './shared/p404/p404.component';
-
 import { APP_ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,20 +10,21 @@ import { RegisterComponent } from './login/register.component';
 
 // Modulos
 import { PagesModule } from './pages/pages.module';
+import { ServiceModule } from './services/service.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-
-    ],
+    RegisterComponent
+      ],
   imports: [
     PagesModule,
     BrowserModule,
     APP_ROUTES,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 
 import { ChartsModule } from 'ng2-charts';
+import { AcountSettingComponent } from './acount-setting/acount-setting.component';
 // npm install --save ng2-charts
 // npm install --save chart.js
 
@@ -22,7 +23,8 @@ import { ChartsModule } from 'ng2-charts';
         Grafica1Component,
         PagesComponent,
         IncrementadorComponent,
-        GraficoDonasComponent
+        GraficoDonasComponent,
+        AcountSettingComponent
     ],
     exports: [
         DashboardComponent,

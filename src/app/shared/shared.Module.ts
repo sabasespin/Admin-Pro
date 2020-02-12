@@ -1,3 +1,5 @@
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { NgModule } from '@angular/core';
 import { BreadcumsComponent } from './breadcums/breadcums.component';
@@ -7,6 +9,10 @@ import { P404Component } from './p404/p404.component';
 
 
 @NgModule({
+    imports: [
+        RouterModule,
+        CommonModule
+    ],
     declarations: [
         HeaderComponent,
         SidebarComponent,
