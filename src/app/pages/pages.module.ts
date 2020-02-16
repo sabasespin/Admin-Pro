@@ -13,6 +13,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 
 import { ChartsModule } from 'ng2-charts';
 import { AcountSettingComponent } from './acount-setting/acount-setting.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 // npm install --save ng2-charts
 // npm install --save chart.js
 
@@ -24,7 +26,9 @@ import { AcountSettingComponent } from './acount-setting/acount-setting.componen
         PagesComponent,
         IncrementadorComponent,
         GraficoDonasComponent,
-        AcountSettingComponent
+        AcountSettingComponent,
+        PromesasComponent,
+        RxjsComponent
     ],
     exports: [
         DashboardComponent,
