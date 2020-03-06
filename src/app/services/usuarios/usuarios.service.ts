@@ -1,3 +1,4 @@
+import { SubirarchivoService } from './../subir-archivo/subirarchivo.service';
 import { URL_SERVICIOS } from './../../conf/conf';
 import { Injectable } from '@angular/core';
 import { Usuario } from './../../models/usuario.models';
@@ -13,7 +14,7 @@ export class UsuariosService {
 token: string;
 usuario: Usuario;
 
-  constructor(public http: HttpClient, public route: Router ) {
+  constructor(public http: HttpClient, public route: Router, public subirarchivo: SubirarchivoService ) {
     this.cargardelStoragge();
    }
 
@@ -35,7 +36,7 @@ if (localStorage.getItem('token')) {
 } else {
   this.token = '';
   this.usuario = null ;
-  this.route.navigate(['/login']);
+ // this.route.navigate(['/login']);
 }
 }
 
@@ -88,4 +89,42 @@ return this.http.post(url, usuario)
   return resp.usuario ;
 }) );
 }
+
+actualizarUsuario(usuario: Usuario) {
+  let url = URL_SERVICIOS + '/usuarios/' + usuario._id;
+  url += '?token=' + this.token ;
+  return this.http.put(url, usuario)
+  .pipe(map( (resp: any) => {
+   const usuarioDb = this.usuario;
+   this.guardarStorage(usuarioDb._id, this.token, usuarioDb);
+   Swal.fire({
+    icon: 'success',
+    title: 'Importante...',
+    text: 'Usuario actualizado! ' + usuario.nombre
+    // footer: '<a href>Why do I have this issue?</a>'
+  });
+   return true;
+  }));
+}
+
+cambiarImagen(archivo: File, id: string) {
+  this.subirarchivo.subirArchivo(archivo, 'usuarios', id)
+  .then( (resp: any) => {
+    this.usuario.img = resp.usuario.img ;
+    Swal.fire({
+      icon: 'success',
+      title: 'Importante...',
+      text: 'Imagen actualizada! ' + this.usuario.nombre
+      // footer: '<a href>Why do I have this issue?</a>'
+    });
+
+    this.guardarStorage(id, this.token, this.usuario);
+
+  } )
+  .catch( resp => {
+    console.log(resp);
+  } );
+
+}
+
 }

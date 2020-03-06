@@ -35,11 +35,11 @@ export class LoginComponent implements OnInit {
        cookiepolicy: 'single_host_origin' ,
        scope: 'profile email'
      } );
-     this.attachSignin(document.getElementById('btnGoogle'));
+     this.attachSigninGoogle(document.getElementById('btnGoogle'));
     });
   }
 
-  attachSignin(elemento) {
+  attachSigninGoogle(elemento) {
     this.auth2.attachClickHandler(elemento, {} , googleUser => {
      const profile = googleUser.getBasicProfile();
      const token = googleUser.getAuthResponse().id_token ;
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
      this.usuarioservice.loginGoogle(token)
      .subscribe( resp => window.location.href = '#/dashboard') ;
 
-    // console.log(profile);
+     console.log(profile);
     // console.log(token);
     } );
   }

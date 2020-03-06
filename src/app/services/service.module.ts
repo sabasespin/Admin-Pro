@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 
-import {SettingService,
+import {
+SettingService,
 SharedService,
 SidebarService,
 UsuariosService,
-LoginGuardsGuard } from './service.index';
+LoginGuardsGuard,
+SubirarchivoService } from './service.index';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ LoginGuardsGuard } from './service.index';
              SharedService,
              SidebarService,
              UsuariosService,
-             LoginGuardsGuard
+             LoginGuardsGuard,
+             SubirarchivoService
 
   ]
 })

@@ -1,3 +1,8 @@
+import { CommonModule } from '@angular/common';
+// Pipe Modules
+import { PipesModule } from './../pipes/pipes.module';
+
+
 import { GraficoDonasComponent } from './../components/grafico-donas/grafico-donas.component';
 import { SharedModule } from './../shared/shared.Module';
 
@@ -15,6 +20,7 @@ import { ChartsModule } from 'ng2-charts';
 import { AcountSettingComponent } from './acount-setting/acount-setting.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 // npm install --save ng2-charts
 // npm install --save chart.js
 
@@ -28,7 +34,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraficoDonasComponent,
         AcountSettingComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent
     ],
     exports: [
         DashboardComponent,
@@ -40,7 +47,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule,
+        CommonModule
     ]
 })
 

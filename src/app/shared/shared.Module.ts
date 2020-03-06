@@ -1,3 +1,4 @@
+import { PipesModule } from './../pipes/pipes.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -11,7 +12,8 @@ import { P404Component } from './p404/p404.component';
 @NgModule({
     imports: [
         RouterModule,
-        CommonModule
+        CommonModule,
+        PipesModule
     ],
     declarations: [
         HeaderComponent,
