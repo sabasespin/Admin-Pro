@@ -1,3 +1,4 @@
+import { ModalUploadComponent } from './../components/modal-upload/modal-upload.component';
 import { CommonModule } from '@angular/common';
 // Pipe Modules
 import { PipesModule } from './../pipes/pipes.module';
@@ -21,6 +22,7 @@ import { AcountSettingComponent } from './acount-setting/acount-setting.componen
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 // npm install --save ng2-charts
 // npm install --save chart.js
 
@@ -35,7 +37,9 @@ import { ProfileComponent } from './profile/profile.component';
         AcountSettingComponent,
         PromesasComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUploadComponent
     ],
     exports: [
         DashboardComponent,

@@ -14,7 +14,7 @@ export class LoginGuardsGuard implements CanActivate {
       console.log('Paso por el Guards') ;
       return true;
     } else {
-      console.log('No Paso por el Guards') ;
+    //  console.log('No Paso por el Guards') ;
       return false;
     }
   }

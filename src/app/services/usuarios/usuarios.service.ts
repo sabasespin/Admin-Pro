@@ -90,20 +90,37 @@ return this.http.post(url, usuario)
 }) );
 }
 
+borrarUsuario(id: string) {
+  let url = URL_SERVICIOS + '/usuarios/' + id;
+  url += '?token=' + this.token ;
+  return this.http.delete(url).
+  pipe( map( (resp: any) => {
+    Swal.fire(
+      'Borrado!',
+      'El usuario fue borrado',
+      'success'
+    );
+    return true;
+  } ) );
+
+}
+
 actualizarUsuario(usuario: Usuario) {
   let url = URL_SERVICIOS + '/usuarios/' + usuario._id;
   url += '?token=' + this.token ;
   return this.http.put(url, usuario)
   .pipe(map( (resp: any) => {
-   const usuarioDb = this.usuario;
-   this.guardarStorage(usuarioDb._id, this.token, usuarioDb);
-   Swal.fire({
+    if (usuario._id === this.usuario._id) {
+      const usuarioDb = this.usuario;
+      this.guardarStorage(usuarioDb._id, this.token, usuarioDb);
+    }
+    Swal.fire({
     icon: 'success',
     title: 'Importante...',
     text: 'Usuario actualizado! ' + usuario.nombre
     // footer: '<a href>Why do I have this issue?</a>'
   });
-   return true;
+    return true;
   }));
 }
 
@@ -125,6 +142,19 @@ cambiarImagen(archivo: File, id: string) {
     console.log(resp);
   } );
 
+}
+
+cargarUsuarios(desde: number = 0) {
+  const url = URL_SERVICIOS + '/usuarios?desde=' + desde ;
+
+  return this.http.get(url);
+}
+
+buscarUsuarios(termino: string) {
+
+  const url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
+
+  return this.http.get(url);
 }
 
 }
