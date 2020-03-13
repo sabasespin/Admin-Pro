@@ -1,3 +1,5 @@
+export { MedicosService } from './medicos/medicos.service';
+export { HospitalesService } from './hospitales/hospitales.service';
 export { UsuariosService } from './usuarios/usuarios.service';
 export {SettingService} from './settin/setting.service';
 export {SharedService} from './shared/shared.service' ;

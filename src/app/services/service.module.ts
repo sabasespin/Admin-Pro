@@ -10,7 +10,10 @@ SharedService,
 SidebarService,
 UsuariosService,
 LoginGuardsGuard,
-SubirarchivoService } from './service.index';
+SubirarchivoService,
+HospitalesService,
+MedicosService
+ } from './service.index';
 
 
 @NgModule({
@@ -25,7 +28,9 @@ SubirarchivoService } from './service.index';
              UsuariosService,
              LoginGuardsGuard,
              SubirarchivoService,
-             ModalUploadService
+             ModalUploadService,
+             HospitalesService,
+             MedicosService
 
   ]
 })

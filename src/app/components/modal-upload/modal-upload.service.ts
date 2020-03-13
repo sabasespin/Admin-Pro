@@ -12,7 +12,7 @@ public oculto: string = 'oculto';
 public notificacion = new EventEmitter<any>();
 
   constructor() {
-    console.log('modal upload listo');
+    // console.log('modal upload listo');
    }
 
 ocultarModal() {
