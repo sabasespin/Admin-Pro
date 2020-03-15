@@ -1,3 +1,4 @@
+
 import { ModalUploadService } from './../components/modal-upload/modal-upload.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,6 +11,7 @@ SharedService,
 SidebarService,
 UsuariosService,
 LoginGuardsGuard,
+AdminGuard,
 SubirarchivoService,
 HospitalesService,
 MedicosService
@@ -27,6 +29,7 @@ MedicosService
              SidebarService,
              UsuariosService,
              LoginGuardsGuard,
+             AdminGuard,
              SubirarchivoService,
              ModalUploadService,
              HospitalesService,

@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Usuarios</h4>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr *ngFor="let usu of usuario" [routerLink]="['/usuarios']" class="pointer">
+                            <td>
+                                <img [src]="usu.img | imagen" class="img-50 img-circle">
+                            </td>
+                            <td>{{usu.nombre}} </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div class="alert alert-info" *ngIf="usuario.length === 0 ">
+                    No hay Usuarios {{termino}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Medicos</h4>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr *ngFor="let medi of medico" [routerLink]="['/medico' , medi._id]" class="pointer">
+                            <td>
+                                <img [src]="medi.img | imagen: 'medico'" class="img-50 img-circle">
+                            </td>
+                            <td>{{medi.nombre}}</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div class="alert alert-info" *ngIf="medico.length === 0 ">
+                    No hay Medicos {{termino}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hospitales</h4>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr *ngFor="let hospi of hospital" [routerLink]="['/hospitales']" class="pointer">
+                            <td>
+                                <img [src]="hospi.img | imagen: 'hospital'" class="img-50 img-circle">
+                            </td>
+                            <td>{{hospi.nombre}}</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div class="alert alert-info" *ngIf="hospital.length === 0 ">
+                    No hay Hospitales {{termino}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
